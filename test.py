@@ -39,7 +39,7 @@ try:
         "toY": 900
     })
 
-    driver.tap([(500, 1320)])
+    # driver.tap([(500, 1320)])
     # driver.tap([(500, 1320)])
     time.sleep(3)
 
