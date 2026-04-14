@@ -42,7 +42,7 @@ try:
     })
     time.sleep(2)
     
-    driver.execute_script("Safari: tap", {
+    driver.execute_script("mobile: tap", {
         "x": 580,
         "y": 1620
     })
