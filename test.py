@@ -53,7 +53,7 @@ try:
     })
     
     # elem1 = driver.find_element("xpath", "//*[contains(@text,'Studio') or contains(@content-desc,'Studio') or contains(@text,'Start Your Project') or contains(@content-desc,'Start Your Project')]")
-    elem1 = driver.find_element("xpath", "//*[contains(@text,'Start Your Project') or contains(@content-desc,'Start Your Project')]")
+    elem1 = driver.find_element("xpath", "//*[contains(@text,'Start Your Project')]")
     elem1.click()
     time.sleep(5)
 
