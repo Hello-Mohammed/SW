@@ -128,6 +128,26 @@ jobs:
       
           echo "DEVICE_ID=$DEVICE_ID" >> $GITHUB_ENV
 
+      - name: Wait for Simulator FULL readiness (REAL FIX 🔥)
+        run: |
+          echo "Waiting for simulator services..."
+      
+          # فتح simulator service داخليًا
+          xcrun simctl spawn $DEVICE_ID launchctl print system > /dev/null 2>&1 || true
+      
+          # انتظار SpringBoard (واجهة iOS)
+          for i in {1..30}; do
+            if xcrun simctl spawn $DEVICE_ID launchctl print system | grep -q "com.apple.springboard"; then
+              echo "Simulator fully ready ✅"
+              break
+            fi
+            echo "Waiting SpringBoard... ($i)"
+            sleep 2
+          done
+      
+          # انتظار إضافي بسيط (مهم جدًا)
+          sleep 10
+
       # تشغيل المحاكي
       # - name: Boot Simulator
       #   run: |
