@@ -41,6 +41,12 @@ try:
         "y": 950
     })
     time.sleep(2)
+    
+    driver.execute_script("mobile: tap", {
+        "x": 580,
+        "y": 1620
+    })
+    time.sleep(2)
 
     # ⬇️ تمرير (بديل drag)
     driver.execute_script("mobile: swipe", {
